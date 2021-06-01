@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>My Tech Blog</title>
+</head>
+<body>
+    <header>
+        <h1>My Tech Blog!</h1>
+        {{#if logged_in}}
+        <ul class="headerUl">
+            <li>
+                Welcome <!-- Get name from db -->
+            </li>
+            <li>
+                <a href="/settings">Settings</a>
+            </li>
+            <li>
+                <button class="noButton">Logout</button>
+            </li>
+
+        </ul>
+        {{else}}
+        <ul class="headerUl">
+            <li>
+                Welcome Guest
+            </li>
+            <li>
+                <a href="/login">Log in</a>
+            </li>
+        </ul>
+        {{/if}}
+    </header>
+    <main>
+        {{{body}}}
+    </main>
+    <footer>
+        <h2>Thanks for visiting My Tech Blog!</h2>
+        <p>For more like this, visit my GitHub: <a href="https://github.com/Hayden-code">Hayden-code</a></p>
+    </footer>
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
+</body>
+</html>
