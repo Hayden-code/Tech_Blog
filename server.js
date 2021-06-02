@@ -1,19 +1,24 @@
+// Dependencies
 const path = require("path");
 const express = require("express");
 const session = require("express-session");
-// const exhbs = require("express-handlebars");
+const exphbs = require("express-handlebars");
 const routes = require("./controllers");
+// uncomment if helpers is used
 // const helpers = require("./utils/helpers");
 
 const sequelize = require("./config/connection");
 const sequelizeStore = require("connect-session-sequelize")(session.Store);
 
+// Initialise and set port for server
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+// uncomment if helpers is used
 // const hbs = exhbs.create({ helpers });
 
-const sess = {
+// Initialise session
+const sessionInit = {
   secret: "Shh secret",
   cookie: {},
   resave: false,
@@ -22,12 +27,15 @@ const sess = {
     db: sequelize,
   }),
 };
+app.use(session(sessionInit));
 
-app.use(session(sess));
-
-app.engine("handlebars", hbs.engine);
+// Set handlebars as the engine for the server.
+// swap line 35 with 34 if helpers is used.
+// app.engine("handlebars", hbs.engine);
+app.engine("handlebars", exphbs());
 app.set("view engine", "handlebars");
 
+// Initialise the parsing of json and string data through express.
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));

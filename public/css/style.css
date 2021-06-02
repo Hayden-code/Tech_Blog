@@ -14,5 +14,6 @@ footer {
 }
 
 #headerUl {
+  display: flex;
   justify-self: right;
 }
