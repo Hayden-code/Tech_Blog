@@ -1,34 +1,45 @@
+<div id="loginHeader">
+    <h2>Login or Sign Up</h2>
+    <p>Doing so gives you the ability to create and comment on posts!</p>
+</div>
 
-<div>
+<div id="loginForms">
     <form id="loginForm">
-        <h2>Login</h2>
+        <h3>Login</h3>
+        <br>
         <div>
-            <label for="loginEmail">Email:</label>
+            <label for="loginEmail">Email:</label> <br>
             <input type="text" id="loginEmail" placeholder="abcd@abcd.abc">
         </div>
+        <br>
         <div>
-            <label for="loginPassword">Password:</label>
-            <input type="text" id="loginPassword" placeholder="abcdabcd">
+            <label for="loginPassword">Password:</label> <br>
+            <input type="password" id="loginPassword" placeholder="abcdabcd">
         </div>
-        <button type="submit" id="loginSubmit">Submit</button>
+        <br>
+        <button class="submitBtn" type="submit" id="loginSubmit">Submit</button>
     </form>
 
     <form id="signUpForm">
-        <h2>Sign Up</h2>
+        <h3>Sign Up</h3>
+        <br>
         <div>
-            <label for="username">Username:</label>
+            <label for="username">Username:</label> <br>
             <input type="text" id="signUpUsername" placeholder="abcd">
         </div>
+        <br>
         <div>
             <label for="signUpEmail">Email:</label> <br>
             <input type="text" id="signUpEmail" placeholder="abcd@abcd.abc">
         </div>
+        <br>
         <div>
-            <label for="signUpPassword">Password:</label>
+            <label for="signUpPassword">Password:</label> <br>
             <small>Must be at least 8 characters.</small> <br>
             <input type="text" id="signUpPassword" placeholder="abcdabcd">
         </div>
-        <button type="submit" id="signUpSubmit">Submit</button>
+        <br>
+        <button class="submitBtn" type="submit" id="signUpSubmit">Submit</button>
     </form>
 </div>
 

@@ -11,34 +11,38 @@
     <header>
         <h1>My Tech Blog!</h1>
         {{#if logged_in}}
-        <ul class="headerUl">
-            <li>
-                Welcome <!-- Get name from db -->
-            </li>
-            <li>
-                <a href="/settings">Settings</a>
-            </li>
-            <li>
-                <button class="noButton">Logout</button>
-            </li>
+        <div id="headerUl">
+            <ul>
+                <li>
+                    Welcome <!-- Get name from db --> 
+                </li>
+                <li>
+                    <a href="/settings" class="link">Settings</a>
+                </li>
+                <li>
+                    <button>Logout</button>
+                </li>
+            </ul>
+            {{else}}
+            <ul>
+                <li>
+                    Welcome Guest
+                </li>
+                <li>
+                    <a href="/login">Log in</a>
+                </li>
+            </ul>
+            {{/if}}
+        </div>
 
-        </ul>
-        {{else}}
-        <ul class="headerUl">
-            <li>
-                Welcome Guest
-            </li>
-            <li>
-                <a href="/login">Log in</a>
-            </li>
-        </ul>
-        {{/if}}
     </header>
     <main>
         {{{body}}}
     </main>
+    <hr>
     <footer>
-        <h2>Thanks for visiting My Tech Blog!</h2>
+        <h2>Thanks for visiting My Tech Blog!</h2> 
+        <br>
         <p>For more like this, visit my GitHub: <a href="https://github.com/Hayden-code">Hayden-code</a></p>
     </footer>
 </body>
