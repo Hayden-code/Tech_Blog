@@ -5,12 +5,8 @@ const login = require("./login");
 
 router.use("/", homeRoutes);
 
-router.use("/login", login);
+// router.use("/login", login);
 
-router.use("/api", apiRoutes);
-
-router.get("/", (req, res) => {
-  res.send("FIRST ROUTE");
-});
+// router.use("/api", apiRoutes);
 
 module.exports = router;
