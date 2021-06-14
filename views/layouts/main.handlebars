@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,42 +8,40 @@
     <link rel="stylesheet" href="/css/style.css">
     <title>My Tech Blog</title>
 </head>
+
 <body>
     <header>
-        <h1>My Tech Blog!</h1>
-        {{#if logged_in}}
-        <ul class="headerUl">
+        <h1><a href="/">Tech Blog!</a></h1>
+        {{#if loggedIn}}
+        <ul>
             <li>
-                Welcome <!-- Get name from db -->
+                Welcome, {{username}}!
             </li>
             <li>
-                <a href="/settings">Settings</a>
+                <a href="/settings" class="link">Settings</a>
             </li>
-            <li>
-                <button class="noButton">Logout</button>
-            </li>
-
         </ul>
         {{else}}
-        <ul class="headerUl">
+        <ul>
             <li>
-                Welcome Guest
+                Welcome, Guest!
             </li>
             <li>
                 <a href="/login">Log in</a>
             </li>
         </ul>
         {{/if}}
+
     </header>
     <main>
         {{{body}}}
     </main>
+    <hr>
     <footer>
         <h2>Thanks for visiting My Tech Blog!</h2>
+        <br>
         <p>For more like this, visit my GitHub: <a href="https://github.com/Hayden-code">Hayden-code</a></p>
     </footer>
 </body>
-{{#if logged_in}}
-<script src="/public/js/login.js"></script>
-{{/if}}
+
 </html>

@@ -1,19 +1,100 @@
 * {
   margin: 0px;
   padding: 0px;
+  font-family: "Lato", sans-serif;
+}
+:root {
+  --radius: 5px;
+  --box-shadow: 1px 1px 1px grey;
+  --border: thin solid black;
+  --borderWhite: thin solid white;
+}
+
+h1 {
+  font-size: 50px;
+}
+h2 {
+  font-size: 40px;
+}
+h3 {
+  font-size: 30px;
+}
+p {
+  font-size: 20px;
 }
 
 header {
+  display: flex;
+  padding: 20px 0px 10px 0px;
+  align-items: center;
   background-color: black;
   color: white;
+  height: fit-content;
 }
-
+main {
+  overflow-y: scroll;
+}
 footer {
-  display: flex;
-  justify-content: center;
+  margin-top: 10px;
+  text-align: center;
 }
 
-#headerUl {
-  display: flex;
-  justify-self: right;
+form {
+  border: var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--box-shadow);
+  padding: 30px 50px;
+  margin: 50px;
+  width: fit-content;
+}
+
+ul {
+  list-style: none;
+  justify-self: end;
+}
+
+li {
+  padding: 10px;
+  margin: 5px;
+  font-size: 20px;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  border: var(--borderWhite);
+  border-radius: var(--radius);
+  transition: 0.1s;
+}
+header a :hover {
+  background-color: rgb(97, 97, 97);
+}
+
+label {
+  font-size: 20px;
+}
+input {
+  font-size: 15px;
+}
+
+#loginHeader {
+  text-align: center;
+  margin-top: 10px;
+}
+
+#loginForms {
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.submitBtn {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 5px;
+  font: inherit;
+  font-size: 1rem;
+  border-radius: var(--radius);
 }
