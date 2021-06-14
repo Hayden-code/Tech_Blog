@@ -1,21 +1,21 @@
 // Login function
 const login = async (event) => {
   event.preventDefault();
+
   const email = document.getElementById("loginEmail").value.trim();
-  const password = document.getElementById("loginEmail").value.trim();
+  const password = document.getElementById("loginPassword").value.trim();
 
   if (email && password) {
-    const submission = await fetch("/api/users/login", {
+    const body = JSON.stringify({ email, password });
+    const submission = await fetch("/api/user/login", {
       method: "POST",
-      body: JSON.stringify({ email, password }),
+      body: body,
       headers: { "Content-Type": "application/json" },
     });
     if (submission.ok) {
       document.location.replace("/");
     } else {
-      alert(
-        "Please enter a valid email and password. Otherwise use the Sign Up tab."
-      );
+      alert(submission.statusText);
     }
   }
 };
@@ -25,9 +25,9 @@ const signUp = async (event) => {
   event.preventDefault();
   const username = document.getElementById("signUpUsername").value.trim();
   const email = document.getElementById("signUpEmail").value.trim();
-  const password = document.getElementById("signUpEmail").value.trim();
+  const password = document.getElementById("signUpPassword").value.trim();
   if (username && email && password) {
-    const submission = await fetch("/api/users", {
+    const submission = await fetch("/api/user/signup", {
       method: "POST",
       body: JSON.stringify({ username, email, password }),
       headers: { "Content-Type": "application/json" },

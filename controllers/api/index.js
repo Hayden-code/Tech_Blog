@@ -1,5 +1,6 @@
 const router = require("express").Router();
+const userRoutes = require("./userRoutes");
 
-router.get("/", (req, res) => {
-  res.send("SECOND ROUTE");
-});
+router.use("/user", userRoutes);
+
+module.exports = router;

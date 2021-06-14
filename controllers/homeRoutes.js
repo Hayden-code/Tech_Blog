@@ -1,7 +1,10 @@
 const router = require("express").Router();
 
 router.get("/", (req, res) => {
-  res.render("layouts/main");
+  res.render("postList", {
+    loggedIn: req.session.loggedIn,
+    username: req.session.username,
+  });
 });
 
 router.get("/login", (req, res) => {
@@ -9,7 +12,10 @@ router.get("/login", (req, res) => {
     res.redirect("/");
     return;
   } else {
-    res.render("login");
+    res.render("login", {
+      loggedIn: req.session.loggedIn,
+      username: req.session.username,
+    });
   }
 });
 

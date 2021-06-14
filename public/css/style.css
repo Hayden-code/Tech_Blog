@@ -1,6 +1,7 @@
 * {
   margin: 0px;
   padding: 0px;
+  font-family: "Lato", sans-serif;
 }
 :root {
   --radius: 5px;
@@ -23,13 +24,18 @@ p {
 }
 
 header {
+  display: flex;
+  padding: 20px 0px 10px 0px;
   align-items: center;
   background-color: black;
   color: white;
   height: fit-content;
 }
-
+main {
+  overflow-y: scroll;
+}
 footer {
+  margin-top: 10px;
   text-align: center;
 }
 
@@ -42,16 +48,14 @@ form {
   width: fit-content;
 }
 
-#headerUl {
-  display: flex;
-  align-items: end;
-  justify-items: right;
-  margin: 10px;
+ul {
+  list-style: none;
+  justify-self: end;
 }
 
 li {
   padding: 10px;
-  margin: 10px;
+  margin: 5px;
   font-size: 20px;
 }
 
@@ -76,6 +80,7 @@ input {
 
 #loginHeader {
   text-align: center;
+  margin-top: 10px;
 }
 
 #loginForms {
