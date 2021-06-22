@@ -1,1 +1,10 @@
-<h1>whats up homies</h1>
+<div id="postList">
+
+    {{#each postList as |posts|}}
+    <div id="post">
+        <h4>{{posts.user.username}} posted:</h4>
+        <h2>{{posts.title}}</h2>
+        <p>{{posts.content}}</p>
+    </div>
+    {{/each}}
+</div>
