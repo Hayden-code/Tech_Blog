@@ -75,7 +75,11 @@ label {
   font-size: 20px;
 }
 input {
+  margin: 5px 0px 5px 0px;
   font-size: 15px;
+  padding: 4px;
+  border: var(--border);
+  border-radius: var(--radius);
 }
 
 #loginHeader {
@@ -93,8 +97,14 @@ input {
   background-color: black;
   color: white;
   border: none;
-  padding: 5px;
+  padding: 10px;
   font: inherit;
   font-size: 1rem;
   border-radius: var(--radius);
+  width: 170px;
+}
+
+#logoutDiv {
+  text-align: center;
+  padding: 50px;
 }

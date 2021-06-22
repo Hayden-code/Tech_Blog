@@ -19,4 +19,11 @@ router.get("/login", (req, res) => {
   }
 });
 
+router.get("/settings", (req, res) => {
+  res.render("settings", {
+    loggedIn: req.session.loggedIn,
+    username: req.session.username,
+  });
+});
+
 module.exports = router;
