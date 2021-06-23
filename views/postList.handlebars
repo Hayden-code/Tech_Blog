@@ -1,10 +1,32 @@
 <div id="postList">
 
     {{#each postList as |posts|}}
-    <div id="post">
-        <h4>{{posts.user.username}} posted:</h4>
+    <div class="post" id="{{id}}">
+        <h4 id="test">{{posts.user.username}} posted:</h4>
         <h2>{{posts.title}}</h2>
         <p>{{posts.content}}</p>
+
+        <br>
+
+        <div class="commentDiv">
+            <hr>
+            <br>
+            <h4>Comments: {{comments.length}}</h4>
+
+            {{#each comments as |comment|}}
+            <div class="comment">
+                <h5>{{comment.user.username}}</h5>
+                <p style="font-size: 15px;">{{comment.content}}</p>
+            </div>
+            {{/each}}
+            <input type="text" id="commentInput{{id}}">
+            <button class="submitBtn" onclick="addComment({{id}})">Add comment</button>
+        </div>
     </div>
     {{/each}}
+
 </div>
+
+{{!-- {{#if loggedIn}} --}}
+<script src="/js/homepage.js"></script>
+{{!-- {{/if}} --}}

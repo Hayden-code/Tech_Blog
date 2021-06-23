@@ -1,7 +1,5 @@
 const router = require("express").Router();
-const session = require("express-session");
 const { User, Post, Comment } = require("../../models");
-const auth = require("../../utils/authentication");
 
 router.get("/", async (req, res) => {
   try {

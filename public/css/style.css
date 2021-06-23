@@ -19,6 +19,12 @@ h2 {
 h3 {
   font-size: 30px;
 }
+h4 {
+  font-size: 20px;
+}
+h5 {
+  font-size: 15px;
+}
 p {
   font-size: 20px;
 }
@@ -75,11 +81,16 @@ label {
   font-size: 20px;
 }
 input {
+  width: 100%;
   margin: 5px 0px 5px 0px;
   font-size: 15px;
   padding: 4px;
   border: var(--border);
   border-radius: var(--radius);
+}
+
+#techBlog {
+  margin-left: 20px;
 }
 
 #loginHeader {
@@ -117,10 +128,20 @@ input {
   align-items: center;
 }
 
-#post {
+.post {
   padding: 20px;
   width: 50%;
   border: var(--border);
   border-radius: var(--radius);
   margin: 10px;
+}
+
+.comment {
+  margin: 5px 0px 5px 10px;
+}
+
+#commentInput {
+  height: fit-content;
+  overflow-x: scroll;
+  overflow-y: visible;
 }

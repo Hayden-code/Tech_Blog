@@ -21,6 +21,7 @@ router.post("/signup", async (req, res) => {
       password: req.body.password,
     });
     req.session.save(() => {
+      req.session.userId = newUser.id;
       req.session.username = req.body.username;
       req.session.loggedIn = true;
       res.status(200).json(newUser);
@@ -34,7 +35,6 @@ router.post("/signup", async (req, res) => {
 router.post("/login", async (req, res) => {
   try {
     const user = await User.findOne({ where: { email: req.body.email } });
-
     if (!user) {
       return res
         .status(400)
@@ -48,6 +48,7 @@ router.post("/login", async (req, res) => {
         .json({ message: "Incorrect Password. Please try again." });
     }
     req.session.save(() => {
+      req.session.userId = user.id;
       req.session.loggedIn = true;
       req.session.username = user.username;
       return res.status(200).json({ user, message: "You are now logged in!" });
