@@ -10,6 +10,10 @@
   --borderWhite: thin solid white;
 }
 
+body {
+  background-color: rgb(238, 238, 238);
+}
+
 h1 {
   font-size: 50px;
 }
@@ -18,6 +22,12 @@ h2 {
 }
 h3 {
   font-size: 30px;
+}
+h4 {
+  font-size: 20px;
+}
+h5 {
+  font-size: 15px;
 }
 p {
   font-size: 20px;
@@ -29,13 +39,13 @@ header {
   align-items: center;
   background-color: black;
   color: white;
-  height: fit-content;
+  height: 120px;
 }
 main {
   overflow-y: scroll;
 }
 footer {
-  margin-top: 10px;
+  margin: 20px 0px 30px 0px;
   text-align: center;
 }
 
@@ -46,6 +56,7 @@ form {
   padding: 30px 50px;
   margin: 50px;
   width: fit-content;
+  background-color: white;
 }
 
 ul {
@@ -74,8 +85,28 @@ header a :hover {
 label {
   font-size: 20px;
 }
-input {
+input,
+textarea {
+  width: 100%;
+  margin: 5px 0px 5px 0px;
   font-size: 15px;
+  padding: 4px;
+  border: var(--border);
+  border-radius: var(--radius);
+}
+
+#techBlog {
+  margin-left: 20px;
+}
+
+.flex {
+  display: flex;
+}
+
+#nav {
+  position: absolute;
+  right: 30px;
+  top: 20px;
 }
 
 #loginHeader {
@@ -93,8 +124,45 @@ input {
   background-color: black;
   color: white;
   border: none;
-  padding: 5px;
+  padding: 10px;
   font: inherit;
   font-size: 1rem;
   border-radius: var(--radius);
+  width: 170px;
+  cursor: pointer;
+}
+
+#logoutDiv {
+  text-align: center;
+  padding: 50px;
+}
+
+.postList {
+  margin: 20px 0px 20px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post {
+  padding: 20px;
+  width: 50%;
+  border: var(--border);
+  border-radius: var(--radius);
+  margin: 10px;
+  background-color: white;
+}
+
+.comment {
+  margin: 5px 0px 5px 10px;
+}
+
+#commentInput {
+  height: fit-content;
+  overflow-x: scroll;
+  overflow-y: visible;
+}
+
+#postContentInput {
+  height: 100px;
 }

@@ -11,18 +11,32 @@
 
 <body>
     <header>
-        <h1><a href="/">Tech Blog!</a></h1>
+        <h1 id="techBlog"><a href="/">Tech Blog</a></h1>
         {{#if loggedIn}}
-        <ul>
+        <ul id="nav">
             <li>
                 Welcome, {{username}}!
             </li>
-            <li>
-                <a href="/settings" class="link">Settings</a>
-            </li>
+            <div class="flex">
+                <li>
+                    <a href="/" class="link">Home</a>
+                </li>
+                <li>
+                    <a href="/createPost" class="link">Create Post</a>
+                </li>
+                <li>
+                    <a href="/userPosts" class="link">Edit Posts</a>
+                </li>
+                <li>
+                    <a href="/settings" class="link">Logout</a>
+                </li>
+
+            </div>
+
+
         </ul>
         {{else}}
-        <ul>
+        <ul id="nav">
             <li>
                 Welcome, Guest!
             </li>
@@ -42,6 +56,11 @@
         <br>
         <p>For more like this, visit my GitHub: <a href="https://github.com/Hayden-code">Hayden-code</a></p>
     </footer>
+
 </body>
+
+{{!-- {{#if loggedIn}} --}}
+<script src="/js/homepage.js"></script>
+{{!-- {{/if}} --}}
 
 </html>
