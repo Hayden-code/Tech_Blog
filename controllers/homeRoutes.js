@@ -27,42 +27,49 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/post/:id", async (req, res) => {
-  try {
-    const postData = await Post.findOne({
-      where: {
-        id: req.params.id,
-      },
-      attributes: ["id", "content", "title"],
-      include: [
-        {
-          model: User,
-          attributes: ["username"],
-        },
-        {
-          model: Comment,
-          attributes: ["id", "content", "postId", "userId"],
-          include: {
-            model: User,
-            attributes: ["username"],
-          },
-        },
-      ],
-    });
-    if (!postData) {
-      res.status(404).json({ message: "No post found with this id" });
-      return;
-    }
-    const post = postData.get({ plain: true });
-    res.render("single-post", {
-      post,
-      loggedIn: req.session.loggedIn,
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
+router.get("/createPost", (req, res) => {
+  res.render("createPost", {
+    loggedIn: req.session.loggedIn,
+    username: req.session.username,
+  });
 });
+
+// router.get("/post/:id", async (req, res) => {
+//   try {
+//     const postData = await Post.findOne({
+//       where: {
+//         id: req.params.id,
+//       },
+//       attributes: ["id", "content", "title"],
+//       include: [
+//         {
+//           model: User,
+//           attributes: ["username"],
+//         },
+//         {
+//           model: Comment,
+//           attributes: ["id", "content", "postId", "userId"],
+//           include: {
+//             model: User,
+//             attributes: ["username"],
+//           },
+//         },
+//       ],
+//     });
+//     if (!postData) {
+//       res.status(404).json({ message: "No post found with this id" });
+//       return;
+//     }
+//     const post = postData.get({ plain: true });
+//     res.render("single-post", {
+//       post,
+//       loggedIn: req.session.loggedIn,
+//     });
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
 
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
