@@ -32,8 +32,32 @@ router.post("/newPost", async (req, res) => {
     return res.status(200).json(newPost);
   } catch (err) {
     console.log(err);
-    return res.status(500).json(newPost);
+    return res.status(500).json(err);
   }
+});
+
+router.put("/editPost", async (req, res) => {
+  try {
+    const updatePost = await Post.update(req.body, {
+      where: {
+        id: req.body.updatePostId,
+      },
+      // title: req.body.postTitle,
+      // content: req.body.postDescription,
+      // userId: req.session.userId,
+    });
+    return res.status(200).json(updatePost);
+  } catch (err) {
+    console.log(err);
+    return res.status(500).json(err);
+  }
+});
+
+router.put("/editPost", (req, res) => {
+  const postId = req.body.updatePostId;
+  postId.content = req.body.postDescription;
+  postId.title = req.body.postTitle;
+  return res.status(200).json(postId);
 });
 
 module.exports = router;

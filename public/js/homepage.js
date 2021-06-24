@@ -19,6 +19,32 @@ const createPost = async () => {
   }
 };
 
+// Update post
+const updatePost = async (postId) => {
+  const updatePostId = "updatePost" + postId;
+  const postTitleId = "postTitle" + postId;
+  const postDescriptionId = "postDescription" + postId;
+
+  const postTitle = document.getElementById(postTitleId).value.trim();
+  const postDescription = document
+    .getElementById(postDescriptionId)
+    .value.trim();
+
+  if (postTitle) {
+    const response = await fetch("/api/posts/editPost", {
+      method: "PUT",
+      body: JSON.stringify({ postTitle, postDescription, updatePostId }),
+      headers: { "Content-Type": "application/json" },
+    });
+
+    if (response.ok) {
+      window.location.href = "/";
+    } else {
+      alert(response.statusText);
+    }
+  }
+};
+
 // Adding comments
 const addComment = async (postId) => {
   const commentInputId = "commentInput" + postId;
