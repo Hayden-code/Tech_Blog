@@ -68,3 +68,18 @@ const addComment = async (postId) => {
     }
   }
 };
+
+// Deleting comments
+const deleteComment = async (commentId) => {
+  const response = await fetch("/api/comments/delete", {
+    method: "DELETE",
+    body: JSON.stringify({
+      commentId,
+    }),
+  });
+  if (response.ok) {
+    document.location.reload();
+  } else {
+    alert(response.statusText);
+  }
+};
