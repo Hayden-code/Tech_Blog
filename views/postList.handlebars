@@ -18,7 +18,13 @@
             {{#each comments as |comment|}}
             <div class="comment">
                 <h5>{{comment.user.username}}</h5>
-                <p style="font-size: 15px;">{{comment.content}}</p>
+                <div>
+                    <p style="font-size: 15px; width 100%;" id="commentInput{{comment.id}}">{{comment.content}}</p>
+
+                    {{!-- <p class="bin" onclick="deleteComment({{comment.id}})">🗑️</p> --}}
+
+                </div>
+
             </div>
             {{/each}}
             <input type="text" id="commentInput{{id}}">

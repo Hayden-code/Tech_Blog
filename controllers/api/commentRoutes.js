@@ -27,4 +27,18 @@ router.post("/", async (req, res) => {
   }
 });
 
+router.delete("/delete", (req, res) => {
+  try {
+    const deleteUserComment = Post.destroy({
+      where: {
+        id: req.body.commentId,
+      },
+    });
+    res.status(500).json(deleteUserComment);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;

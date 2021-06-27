@@ -107,6 +107,7 @@ textarea {
   position: absolute;
   right: 30px;
   top: 20px;
+  text-align: right;
 }
 
 #loginHeader {
@@ -165,4 +166,8 @@ textarea {
 
 #postContentInput {
   height: 100px;
+}
+
+.bin {
+  cursor: pointer;
 }
