@@ -6,7 +6,7 @@
 
 # User-Story
 
-    I want to access a blog filled with posts related to coding technologies.
+I want to access a blog filled with posts related to coding technologies.
 
 # Table of contents
 
@@ -22,17 +22,17 @@
 
 # Description
 
-    Creating a tech blog using architectural design pattern Model-View-Controller as a template for website.
+Creating a tech blog using architectural design pattern Model-View-Controller as a template for website.
 
 # Screenshots
 
 <h2> HomePage </h2>
 
-![Screenshot of project](./public/Media/Screenshot.jpeg)
+![Screenshot of project](./public/Media/Screenshot.png)
 
 <h2> Create Post </h2>
 
-![Screenshot of project](./public/Media/Screenshot2.jpeg)
+![Screenshot of project](./public/Media/Screenshot2.png)
 
 # Installations
 
@@ -56,15 +56,15 @@ Open integrated terminal and type npm i to install dependencies below:
 
 # Usage
 
-    Create posts and add comments on areas of coding technology that interests you.
+Create posts and add comments on areas of coding technology that interests you.
 
 # Contributing
 
-    There are a few features yet to be added. Editting posts and comments, deleting posts and comments, a search bar, and many other features. If you wish to add something, create a pull request and shoot me a message on email or via GitHub. I would love to hear from you!
+There are a few features yet to be added. Editting posts and comments, deleting posts and comments, a search bar, and many other features. If you wish to add something, create a pull request and shoot me a message on email or via GitHub. I would love to hear from you!
 
 # Testing-Procedure
 
-    Please only PR code that doesn't brek website.
+Please only PR code that doesn't break website.
 
 # Contact
 
